@@ -28,7 +28,31 @@ class StringManipTests {
 	 * 
 	 */
 	public int sumStringDigits(String str) {
-		return 0;
+		int sum = 0;
+		String num = "";
+		for (int i=0; i<str.length(); i++) {
+			String letter = str.substring(i, i+1);
+			System.out.println(letter);
+			if (letter.equals("0") || letter.equals("1") || letter.equals("2") || letter.equals("3") || letter.equals("4") || letter.equals("5") ||
+					letter.equals("6") || letter.equals("7") || letter.equals("8") || letter.equals("9")) {
+				num += letter;
+				//System.out.println(letter);
+			}
+			else {
+				if (num.length() > 0) {
+					sum += Integer.parseInt(num);
+					num = "";
+					System.out.println(num);
+				}
+				System.out.println(sum);
+			}
+		}
+		if (num.length() > 0) {
+			sum += Integer.parseInt(num);
+			num = "";
+			System.out.println(num);
+		}
+		return sum;
 	}
 	
 	
